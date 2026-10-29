@@ -14,7 +14,6 @@ a{color:inherit;text-decoration:none}
 @keyframes drift{to{translate:6vw -4vh;scale:1.18}}
 .bar{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--accent);transform-origin:0;transform:scaleX(0);z-index:60}
 
-/* nav */
 nav{position:fixed;z-index:40;top:calc(14px + env(safe-area-inset-top,0px));left:50%;translate:-50% 0;width:min(920px,calc(100% - 28px));display:flex;align-items:center;gap:6px;padding:8px 10px 8px 20px;border-radius:999px;background:var(--glass);border:1px solid var(--edge);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);box-shadow:var(--shadow);animation:drop .9s var(--ease) .1s both}
 @keyframes drop{from{translate:-50% -140%;opacity:0}}
 .mark{font-weight:800;font-size:1.15rem;letter-spacing:-.02em;margin-right:auto}
@@ -37,7 +36,6 @@ nav a.l:hover::after{transform:scaleX(1);transform-origin:left}
 .theme:active .knob{scale:.85}
 .theme:focus-visible,.btn:focus-visible,.wa:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
-/* hero */
 .story{position:relative;height:190svh}
 .hero{position:sticky;top:0;height:100svh;overflow:hidden;--p:0}
 .copy{position:absolute;left:5vw;top:50%;translate:0 -46%;max-width:62vw}
@@ -74,7 +72,6 @@ h1 .hi{font-size:.36em;margin-bottom:.06em}
 @keyframes up{from{translate:0 12%;opacity:0;filter:blur(14px)}}
 @keyframes bob{50%{translate:0 -6px}}
 
-/* 3D icon tiles */
 .stage{position:absolute;inset:0;z-index:4;perspective:900px;pointer-events:none}
 .tile{position:absolute;left:var(--x);top:calc(var(--y) - var(--p)*var(--s,10svh));width:clamp(50px,6.2vw,92px);aspect-ratio:1;animation:in .9s var(--ease) var(--dl) both,float 6s ease-in-out var(--dl) infinite alternate;pointer-events:auto;cursor:pointer}
 @keyframes in{from{opacity:0;scale:.2}}
@@ -90,7 +87,6 @@ h1 .hi{font-size:.36em;margin-bottom:.06em}
 .bit{position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;background:var(--c);animation:burst .75s var(--ease) forwards;pointer-events:none}
 @keyframes burst{to{translate:var(--dx) var(--dy);opacity:0;scale:.2}}
 
-/* whatsapp */
 .wa{position:fixed;z-index:45;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,rgba(60,220,120,.95),rgba(20,160,90,.95));border:1px solid rgba(255,255,255,.55);box-shadow:0 16px 30px -10px rgba(20,160,90,.7),inset 0 2px 2px rgba(255,255,255,.5);transition:scale .3s var(--ease),rotate .4s var(--ease);animation:pop .8s var(--ease) 1.8s both}
 @keyframes pop{from{scale:0;rotate:-90deg}}
 .wa::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid rgba(40,200,110,.7);animation:ring 2.4s ease-out infinite}
@@ -102,7 +98,6 @@ h1 .hi{font-size:.36em;margin-bottom:.06em}
 .tip{position:absolute;right:72px;white-space:nowrap;padding:8px 14px;border-radius:999px;font-size:.85rem;font-weight:500;color:var(--ink);background:var(--glass);border:1px solid var(--edge);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;translate:10px 0;transition:.3s var(--ease);pointer-events:none}
 .wa:hover .tip,.wa:focus-visible .tip{opacity:1;translate:0 0}
 
-/* story sections */
 .sec{position:relative;padding:clamp(70px,12svh,130px) 5vw}
 .sec [data-reveal]{transition:opacity .9s var(--ease) calc(var(--j,0)*90ms),translate .9s var(--ease) calc(var(--j,0)*90ms),transform .4s var(--ease),clip-path 1.2s var(--ease),background .3s,border-color .3s}
 .in1{max-width:1100px;margin:0 auto}
@@ -154,7 +149,6 @@ h1 .hi{font-size:.36em;margin-bottom:.06em}
  .fw{max-width:340px;margin:0 auto}
  .sv{grid-template-columns:44px 1fr 40px;padding:18px}
 }
-/* work cards */
 .btn{isolation:isolate}
 .btn.off{pointer-events:none;opacity:.55;border-style:dashed}
 .work{padding:clamp(70px,12svh,130px) 5vw 14svh}
@@ -214,7 +208,6 @@ blockquote p{font-size:1.1rem}blockquote cite{display:block;margin-top:8px;font-
  .cg,.kp{grid-template-columns:1fr}
  .shots{grid-template-columns:1fr 1fr}
 }
-/* tools */
 .tools{position:relative;padding:clamp(80px,14svh,150px) 0 clamp(90px,16svh,170px);overflow:hidden}
 .th{max-width:1100px;margin:0 auto clamp(40px,7svh,80px);padding:0 5vw}
 .kick{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
@@ -249,7 +242,6 @@ blockquote p{font-size:1.1rem}blockquote cite{display:block;margin-top:8px;font-
  .tile{width:clamp(44px,12vw,60px)}
  .tip{display:none}
 }
-/* polish */
 .skip{position:fixed;left:14px;top:-70px;z-index:70;padding:10px 16px;border-radius:999px;background:var(--ink);color:var(--bg);font-weight:600;transition:top .3s var(--ease)}
 .skip:focus{top:calc(10px + env(safe-area-inset-top,0px))}
 .fw .frame{clip-path:inset(100% 0 0 0);transition:clip-path 1.3s var(--ease) .15s}
@@ -267,18 +259,12 @@ html.nf h1{font-size:min(12.5vw,26svh)}
 @media (prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important}[data-reveal]{opacity:1;translate:none}.fw .frame{clip-path:none}.steps::before{transform:none}}
 
 
-/* =================================
-   PORTFOLIO CARD ALIGNMENT FIX
-================================= */
-
-/* Keep the two sides of every card aligned */
 .card {
   align-items: stretch;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(20px, 3vw, 36px);
 }
 
-/* Align text and buttons consistently */
 .card .meta {
   display: flex;
   flex-direction: column;
@@ -289,7 +275,6 @@ html.nf h1{font-size:min(12.5vw,26svh)}
   height: 100%;
 }
 
-/* Keep category labels aligned */
 .card .top {
   display: flex;
   align-items: center;
@@ -297,7 +282,6 @@ html.nf h1{font-size:min(12.5vw,26svh)}
   min-height: 34px;
 }
 
-/* Give project titles consistent spacing */
 .card h3 {
   width: 100%;
   margin: 0;
@@ -305,7 +289,6 @@ html.nf h1{font-size:min(12.5vw,26svh)}
   overflow-wrap: anywhere;
 }
 
-/* Keep descriptions readable and evenly spaced */
 .card .meta > p {
   width: 100%;
   max-width: 42ch;
@@ -313,7 +296,6 @@ html.nf h1{font-size:min(12.5vw,26svh)}
   line-height: 1.6;
 }
 
-/* Align link buttons neatly */
 .card .links {
   display: flex;
   flex-wrap: wrap;
@@ -324,7 +306,6 @@ html.nf h1{font-size:min(12.5vw,26svh)}
   padding-top: 0.5rem;
 }
 
-/* Keep image within its dotted frame */
 .card .slot.big {
   overflow: hidden;
   border-radius: 22px;
@@ -332,7 +313,6 @@ html.nf h1{font-size:min(12.5vw,26svh)}
   min-height: 0;
 }
 
-/* Ensure the image stays within the frame */
 .card .slot.big img {
   display: block;
   width: 100%;
@@ -340,14 +320,12 @@ html.nf h1{font-size:min(12.5vw,26svh)}
   object-fit: contain;
 }
 
-/* Keep the image area properly sized */
 .card .vis {
   position: relative;
   min-width: 0;
   min-height: 300px;
 }
 
-/* Mobile layout */
 @media (max-width: 760px) {
   .card {
     grid-template-columns: minmax(0, 1fr);
@@ -367,13 +345,6 @@ html.nf h1{font-size:min(12.5vw,26svh)}
     margin-top: 0.5rem;
   }
 }
-/* =========================================
-   ADDITIONAL RESPONSIVE FIXES
-   Keep this at the VERY BOTTOM of your CSS
-========================================= */
-
-/* Prevent horizontal overflow on all screens */
-html,
 body {
   width: 100%;
   max-width: 100%;
