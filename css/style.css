@@ -986,3 +986,14 @@ svg {
   visibility: visible;
   opacity: 1;
 }
+@media (max-width: 760px) {
+  #stage .spin {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  #stage .box {
+    transform: none !important;
+    -webkit-transform: none !important;
+  }
+}
