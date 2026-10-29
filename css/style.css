@@ -707,6 +707,102 @@ svg {
 }
 
 
+/* ==========================================
+   IPHONE SAFARI FIX
+   Keep this at the very bottom of style.css
+========================================== */
+
+/* 1. Make the hero portrait render cleanly */
+.pw {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.pw img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* 2. Give the floating icon tiles a solid fallback */
+.face {
+  background: var(--c);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Restore the gradient on browsers that support color-mix */
+@supports (background: color-mix(in srgb, red, white)) {
+  .face {
+    background: linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--c) 70%, white),
+      color-mix(in srgb, var(--c) 92%, transparent)
+    );
+  }
+}
+
+/* Keep SVG icon artwork visible */
+.face svg {
+  display: block;
+  width: 46%;
+  height: 46%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ensure the play icon remains filled */
+.face svg path[fill="#fff"] {
+  fill: #fff;
+  stroke: none;
+}
+
+/* Preserve the 3D tile structure */
+.spin,
+.box {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* Keep the floating WhatsApp icon visible */
+.wa svg {
+  display: block;
+  width: 30px;
+  height: 30px;
+  max-width: none;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 3. Avoid expensive portrait effects on smaller screens */
+@media (max-width: 760px) {
+  .pw img {
+    filter: none;
+    animation: none;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .pw {
+    scale: 1;
+  }
+}
+
 @supports (-webkit-touch-callout: none) {
   .pw img {
     animation: none !important;
