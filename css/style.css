@@ -919,3 +919,70 @@ svg {
 }
 
 }
+
+
+/* ==========================================
+   FLOATING ICON FIX — IPHONE SAFARI
+========================================== */
+
+/* Preserve the 3D layers */
+#stage,
+#stage .tile,
+#stage .spin,
+#stage .box {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* Keep each icon tile visible */
+#stage .face {
+  display: grid;
+  place-items: center;
+  overflow: visible;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+/* Make the SVG artwork render clearly */
+#stage .face svg {
+  display: block;
+  width: 46%;
+  height: 46%;
+  min-width: 20px;
+  min-height: 20px;
+  overflow: visible;
+  opacity: 1;
+  visibility: visible;
+  stroke: #fff;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Keep the play icon filled */
+#stage .face svg path[fill="#fff"] {
+  fill: #fff;
+  stroke: none;
+}
+
+/* Safari fallback for the coloured tile faces */
+#stage .face {
+  background-color: var(--c);
+}
+
+@supports (background: color-mix(in srgb, red, white)) {
+  #stage .face {
+    background: linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--c) 70%, white),
+      color-mix(in srgb, var(--c) 92%, transparent)
+    );
+  }
+}
+
+/* Keep the WhatsApp SVG visible too */
+.wa svg,
+.wa svg path {
+  visibility: visible;
+  opacity: 1;
+}
