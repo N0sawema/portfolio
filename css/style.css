@@ -705,3 +705,23 @@ svg {
     -webkit-clip-path: none !important;
   }
 }
+
+
+@supports (-webkit-touch-callout: none) {
+  .pw img {
+    animation: none !important;
+    translate: none !important;
+    scale: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    image-rendering: auto;
+    -webkit-transform: translateZ(0);
+  }
+}
+.face svg {
+  width: 46%;
+  height: 46%;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.9;
+}
